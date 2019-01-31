@@ -1,0 +1,10 @@
+.Items {
+  padding: 0;
+}
+
+.Items > li {
+  list-style: none;
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 8px;
+}

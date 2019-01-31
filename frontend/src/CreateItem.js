@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import './CreateItem.css';
+
 class CreateItem extends Component {
 
   constructor(props) {
@@ -16,12 +18,13 @@ class CreateItem extends Component {
   render() {
     return (
       <form onSubmit={this.onSubmit.bind(this)}>
-        <label>Item:
+        <div className="FormGroup">
+          <label>Item:</label>
           <input value={this.state.item}
                  onChange={(event) => this.setState({item: event.target.value})}
           />
-        </label>
-        <button>Create!</button>
+        </div>
+        <button className="FormButton">Create!</button>
       </form>
     );
   }

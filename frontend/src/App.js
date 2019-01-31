@@ -3,6 +3,9 @@ import React, {Component} from 'react';
 import CreateItem from './CreateItem.js';
 import Items from './Items.js';
 
+import './App.css';
+
+
 class App extends Component {
 
   constructor(props) {
