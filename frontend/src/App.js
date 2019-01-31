@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 
+import CreateItem from './CreateItem.js';
 import Items from './Items.js';
 
 class App extends Component {
@@ -15,10 +16,25 @@ class App extends Component {
     this.setState({items: items});
   }
 
+  async onCreate(item) {
+    this.setState(prevState => ({items: [...prevState.items, item]}));
+    await fetch(
+      "/items/", {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(item),
+      }
+    );
+  }
+
   render() {
     return (
-        <div className="App">
+      <div className="App">
         <Items items={this.state.items} />
+        <CreateItem onCreate={this.onCreate.bind(this)} />
       </div>
     );
   }
