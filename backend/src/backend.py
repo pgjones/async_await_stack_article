@@ -5,7 +5,7 @@ app = Quart(__name__)
 
 
 @app.route("/items/")
-async def items():
+async def get_items():
     return jsonify(["a", "b", "c"])
 
 
